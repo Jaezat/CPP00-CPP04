@@ -6,7 +6,7 @@
 /*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 09:39:30 by mariacos          #+#    #+#             */
-/*   Updated: 2026/07/12 14:34:10 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/03 15:32:51 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,7 @@ void lowerToUpper(const char **str)
 		j = 0;
 		while(str[i][j])
 		{
-			if(str[i][j] >= 'a' && str[i][j] <= 'z')
-			{
-				c = str[i][j] - 32;
-				std::cout << c;
-			}
-			else
-				std::cout << str[i][j];
+			std::cout << (char)std::toupper((unsigned char)c);
 			j++;
 		}
 		i++;
