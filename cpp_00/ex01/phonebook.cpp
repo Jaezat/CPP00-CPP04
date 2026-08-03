@@ -63,20 +63,78 @@ is prompted to enter one of three commands:
 #include <iostream>
 #include <string>
 
-class phoneBook
-{
-	/* 
-	- has an array of contacts
-	- store max 8 contacts
-	- If user tries to add a 9th contact:
-	- replace the oldest one by the new one */
-	/* 
-	attributes [private]:
-		- array
-	methods [public]: 
-		- function that replaces the new contact as
-		the old one.
-	*/
+
+
+class Contact {
+	private:
+		std::string firstName;
+		std::string lastName;
+		std::string nickName;
+		int phoneNumber;
+		std::string darkestSecret;
 	
+	public:
+		void setFirstName(std::string firstName);
+    	void setLastName(std::string lastName);
+    	void setNickName(std::string nickName);
+    	void setPhoneNumber(int number);
+    	void setDarkestSecret(std::string secret);
 }
 
+
+
+
+
+class PhoneBook
+{
+	private:
+		Contact contacts[8];
+		int index;
+	public:
+		addContact(Contact c)
+}
+
+
+
+
+
+/********************************************************/
+
+/*
+Empieza vacío
+Repite:
+    pide comando
+    si ADD → pide 5 campos, guarda contacto (reemplaza el viejo si ya hay 8)
+    si SEARCH → muestra tabla, pide índice, muestra contacto completo
+    si EXIT → termina el programa
+    si otra cosa → ignora y repite
+*/
+
+int main(int argc, const char **argv)
+{
+	std::string add;
+	std::string search;
+	std::string exit;
+
+
+	add = "ADD";
+	search = "SEARCH";
+	exit = "EXIT";
+	if (argv[1] == add)
+	{
+		
+		//pedir 5 campos, guardar contacto y reemplazar viejo si ya existe
+	}
+	else if (argv[1] == search)
+	{
+
+	}
+	else if (argv[1] == exit)
+	{
+
+	}
+	else
+	{
+		//ignorar
+	}
+}
