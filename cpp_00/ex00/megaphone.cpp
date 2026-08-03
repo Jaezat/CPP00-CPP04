@@ -20,7 +20,7 @@ void lowerToUpper(const char **str)
 
 	i = 1;
 	j = 0;
-	while(str[i]) // use a function instead 
+	while(str[i])
 	{
 		j = 0;
 		while(str[i][j])
@@ -32,7 +32,7 @@ void lowerToUpper(const char **str)
 	}
 }
 
-int main(int argc, const char **argv) // arguments in stream do not use **argv
+int main(int argc, const char **argv)
 {
 	const char *str;
 
