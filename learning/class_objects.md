@@ -63,4 +63,29 @@ int main() {
     // c.firstName ya es "Desconocido", c.phoneNumber ya es 0
 }```
 
-    
+
+# Differences between classes and objects
+
+## Classes
+- Template
+- User defined data type
+
+## Object
+- An instance of that class
+
+### ex:
+Class: A fruit
+Object: A banana
+
+# What is an atribute? 
+- variables inside a class.
+
+# What happens when atributes are public?
+The atributes (variables) are accessible outside that class. 
+
+
+
+
+
+
+
