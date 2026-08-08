@@ -14,7 +14,7 @@ int main()
 {
 	YoutubeChannel mariacos;
 
-	mariacos.name = "Codebeauty";
+	mariacos.Name = "Codebeauty";
 	mariacos.OwnerName = "Sldi";
 	mariacos.SubscriberCount = 8;
 	mariacos.PublishedVideoTitles = {"fodase", "hey"};

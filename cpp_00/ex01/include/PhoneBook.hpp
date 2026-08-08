@@ -6,6 +6,12 @@
 # include "Contact.hpp"
 # include <string>
 
+class PhoneBook {
+public:
+    Contact contacts[8];
+    int count;
+
+};
 
 
 #endif
