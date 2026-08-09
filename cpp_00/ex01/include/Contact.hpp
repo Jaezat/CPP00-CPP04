@@ -8,6 +8,7 @@
 class Contact {
 public:
         int name;
+        std::string index;
         std::string FirstName;
         std::string LastName;
         std::string NickName;
@@ -19,7 +20,7 @@ public:
         Contact(int id, std::string firstName, std::string lastName, 
             std::string nickName, std::string phoneNumber, std::string darkestSecret)
         {
-            name = id;
+            index = id;
             FirstName = firstName;
             LastName = lastName;
             NickName = nickName;

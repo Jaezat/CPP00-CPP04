@@ -17,6 +17,7 @@ public:
     PhoneBook ()
     {
         total = 0;
+        index = 0;
         sizeArr = 5;
         inputNeeded[0] = "First name";
         inputNeeded[1] = "Last name";
