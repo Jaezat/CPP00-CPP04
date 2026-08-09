@@ -27,6 +27,6 @@ public:
             DarkestSecret = darkestSecret;
 
         } 
-}
+};
 
 #endif
