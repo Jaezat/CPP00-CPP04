@@ -8,7 +8,7 @@
 
 # define LIMIT 8
 
-class PhoneBook 
+class PhoneBook
 {
     private:
         int total;
@@ -20,11 +20,16 @@ class PhoneBook
     public:
         PhoneBook(void);
         ~PhoneBook(void);
+
+        int         addContact(void);
+        int         search(void);
+        int         getTotal(void) const;
         static int  isLowerCase(std::string input);
         static void printHeader(PhoneBook *phoneBook);
         static void printColumn(PhoneBook *phoneBook, int i);
         static void printValues(PhoneBook *phoneBook);
         static void printTable(PhoneBook *phoneBook);
+        static void printContactDetails(PhoneBook *phoneBook, int i);
         static void printWelcomeMessage();
         static void printSearchMessage();
 };
