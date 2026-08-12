@@ -7,7 +7,6 @@
 
 class Contact {
 public:
-        int name;
         std::string index;
         std::string FirstName;
         std::string LastName;
@@ -15,19 +14,6 @@ public:
         std::string PhoneNumber;
         std::string DarkestSecret;
 
-        Contact() {}
-
-        Contact(int id, std::string firstName, std::string lastName, 
-            std::string nickName, std::string phoneNumber, std::string darkestSecret)
-        {
-            index = id;
-            FirstName = firstName;
-            LastName = lastName;
-            NickName = nickName;
-            PhoneNumber = phoneNumber;
-            DarkestSecret = darkestSecret;
-
-        } 
 };
 
 #endif

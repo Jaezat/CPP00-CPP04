@@ -45,7 +45,9 @@ int promptUserInfo(PhoneBook *phoneBook) {
             std::cout << "Empty field detected. Contact cannot be saved. Please start over." << std::endl;
             return 1;
         }
+        std::cout << i;
         phoneBook->contacts[i].index = i;
+        std::cout << "HEre";
     }
     phoneBook->total++;
     return 0;
@@ -61,8 +63,12 @@ void printWelcomeMessage() {
     std::cout << "||                                                  ||\n";
     std::cout << "======================================================\n";
     std::cout << "\n";
-    std::cout << "------------------------------------------------------\n";
-    std::cout << "Please choose an option: ADD, SEARCH, EXIT\n";
+}
+
+void printSearchMessage()
+{
+    std::cout << std::endl << "------------------------------------------------------\n";
+    std::cout << "Choose an option: ADD, SEARCH, EXIT\n";
     std::cout << "------------------------------------------------------\n";
 }
 
@@ -76,7 +82,8 @@ std::string truncVal(std::string value)
 void printHeader(PhoneBook *phoneBook)
 {
     std::cout << std::endl;
-    for (int i = 0; i < phoneBook->sizeArr; i++)
+    std::cout << std::setw(10) << "Index" << "|";
+    for (int i = 0; i < 4; i++)
     {
         std::cout << std::left;
         std::cout << std::setw(10) << phoneBook->inputNeeded[i] << "|";
@@ -85,18 +92,21 @@ void printHeader(PhoneBook *phoneBook)
     std::cout << std::endl;
 }
 
+void printColumn(PhoneBook *phoneBook, int i)
+{
+    std::cout << std::left;
+    std::cout << std::setw(10) << truncVal(phoneBook->contacts[i].index) << "|";
+    std::cout << std::setw(10) << truncVal(phoneBook->contacts[i].FirstName) << "|";
+    std::cout << std::setw(10) << truncVal(phoneBook->contacts[i].LastName) << "|";
+    std::cout << std::setw(10) << truncVal(phoneBook->contacts[i].NickName) << "|";
+    std::cout << std::right;
+}
+
 void printValues(PhoneBook *phoneBook)
 {
     std::cout << std::endl;
     for (int i = 0; i < phoneBook->total; i++)
-    {
-        std::cout << std::left;
-        std::cout << std::setw(10) << truncVal(phoneBook->contacts[i].index) << "|";
-        std::cout << std::setw(10) << truncVal(phoneBook->contacts[i].FirstName) << "|";
-        std::cout << std::setw(10) << truncVal(phoneBook->contacts[i].LastName) << "|";
-        std::cout << std::setw(10) << truncVal(phoneBook->contacts[i].NickName) << "|";
-        std::cout << std::right;
-    }
+        printColumn(phoneBook, i);
     std::cout << std::endl;
 }
 
@@ -117,64 +127,68 @@ int chooseIndex(PhoneBook *phoneBook)
     {
         if (index == phoneBook->contacts[i].index){
             printHeader(phoneBook);
-            std::cout << std::left;
-            std::cout << std::setw(10) << truncVal(phoneBook->contacts[i].index) << "|";
-            std::cout << std::setw(10) << truncVal(phoneBook->contacts[i].FirstName) << "|";
-            std::cout << std::setw(10) << truncVal(phoneBook->contacts[i].LastName) << "|";
-            std::cout << std::setw(10) << truncVal(phoneBook->contacts[i].NickName) << "|";
-            std::cout << std::right;
+            printColumn(phoneBook, i);
             return 1;
         }
     }
     return 0;
 }
 
+int isLowerCase(std::string input)
+{
+    for (unsigned long i = 0; i < input.size(); i++)
+    {
+        if (std::islower(static_cast<unsigned char>(input[i])))
+            return 1;
+    }
+    return 0;
+}
+
+
 int main()
 {
     std::string input;
     PhoneBook phoneBook;
-
+    
+    printWelcomeMessage();
     while(1)
     {
-        printWelcomeMessage();
-        std::getline(std::cin, input); 
-
+        printSearchMessage();
+        std::getline(std::cin, input);
         if (input == "ADD")
         {
             if (promptUserInfo(&phoneBook))
-                break;
             std::cout << "\nContact added!\n" << std::endl;
+            continue;
         }  
        else if (input == "SEARCH")
        {
-        if (phoneBook.total == 0)
-        {
-            std::cout << "Phonebook is empty. Add a contact.";
-            break;
+            if (phoneBook.total == 0)
+            {
+                std::cout << "Phonebook is empty. Add a contact." << std::endl;
+                continue;
+            }
+            else
+            {
+                printTable(&phoneBook);
+                if (!chooseIndex(&phoneBook))
+                    std::cout << "Contact not found." << std::endl;    
+            }
         }
-        else
+        else 
         {
-            printTable(&phoneBook);
-            if (!chooseIndex(&phoneBook))
-                std::cout << "Contact not found." << std::endl;    
+            if (isLowerCase(input))
+            {
+                std::cout << std::endl << "Please add option in UPPERCASE." << std::endl;
+                continue;
+            }
+            if (input == "EXIT")
+            {
+                std::cout << "Bye bye!" << std::endl;
+                break;
+            }
         }
-        /*1. Show list in 4 columns
-            - each column separed by 10 chars
-            - if text longer > 10 trucate up until 10 and add "." at the end
-         ask the user what they want to see */
-        /*2. Prompt the user to choose an index */
-
-        /* 3. Show contact chosen:       
-            - if index out of range or invalid (!number)
-            - if valid: show only the contact */        
-       }
-        /*else (input = EXIT)
-        {
-        } */
-
-
-
-
+    
     }
 
 }
