@@ -5,15 +5,20 @@
 # include <iomanip>
 # include <string>
 
-class Contact {
-public:
-        std::string index;
-        std::string FirstName;
-        std::string LastName;
-        std::string NickName;
-        std::string PhoneNumber;
-        std::string DarkestSecret;
-
+class Contact
+{
+        private:
+                std::string _index;
+                std::string _FirstName;
+                std::string _LastName;
+                std::string _NickName;
+                std::string _PhoneNumber;
+                std::string _DarkestSecret;
+        
+        public:
+                void            setIndex(std::string index); {this->_index = index; }
+                std::string     getIndex(void) const; { return (this->_index); }
+ 
 };
 
 #endif
