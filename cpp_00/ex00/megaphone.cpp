@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mariacos <mariacos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 09:39:30 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/03 15:32:51 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/13 11:23:14 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,14 @@
 
 void lowerToUpper(const char **str)
 {
-	int i;
-	int j;
-	char c;
-
-	i = 1;
-	j = 0;
-	while(str[i])
+	for (int i = 1; str[i]; i++)
 	{
-		j = 0;
-		while(str[i][j])
-		{
-			std::cout << (char)std::toupper((unsigned char)c);
-			j++;
-		}
-		i++;
+		std::string	arg = str[i];
+		for(size_t j = 0; j < arg.length(); j++)
+			std::cout << (char)std::toupper(arg.at(j));
+		std::cout << ' ';
 	}
+	std::cout << std::endl;
 }
 
 int main(int argc, const char **argv)

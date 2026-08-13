@@ -16,17 +16,20 @@ private:
         std::string _DarkestSecret;
 
 public:
+        // setters
         void            setIndex(std::string index);
-        std::string     getIndex(void) const;
         void            setFirstName(std::string value);
-        std::string     getFirstName(void) const;
         void            setLastName(std::string value);
-        std::string     getLastName(void) const;
         void            setNickName(std::string value);
-        std::string     getNickName(void) const;
         void            setPhoneNumber(std::string value);
-        std::string     getPhoneNumber(void) const;
         void            setDarkestSecret(std::string value);
+
+        // getters
+        std::string     getIndex(void) const;
+        std::string     getFirstName(void) const;
+        std::string     getLastName(void) const;
+        std::string     getNickName(void) const;
+        std::string     getPhoneNumber(void) const;
         std::string     getDarkestSecret(void) const;
 };
 

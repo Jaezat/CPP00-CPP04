@@ -2,7 +2,7 @@
 
 # include <iostream>
 
-int main()
+int main(void)
 {
     std::string input;
     PhoneBook   phoneBook;
