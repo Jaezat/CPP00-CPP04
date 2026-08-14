@@ -12,29 +12,28 @@
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(std::string name) 
 {
-    std::cout << "Zombie created! Yay!" << std::endl; 
-    _name = name;
+    this->_name = name;
+    std::cout << "\033[33mZombie " << _name << " created! Yay!\033[0m" << std::endl;
 }
 
-Zombie::~Zombie() {
-    std::cout << "Zombie destroyed! No :(" << std::endl;
+Zombie::~Zombie(void) 
+{
+    std::cout << "\033[31mZombie " << _name << " destrrrroooyeddd! Muahahahahah!\033[0m" << std::endl;
 }
 
-void announce(std::string name)
+void Zombie::setName(std::string name) 
 {
-    
-}
+    this->_name = name;
+};
 
-
-
-Zombie *newZombie(std::string name)
+std::string Zombie::getName(void)
 {
-    
-}
+    return (this->_name);
+};
 
-void randomChump(std::string name)
+void Zombie::announce(void)
 {
-    
+    std::cout << "\033[34m" << this->_name << ": BraiiiiiiinnnzzzZ..." << "\033[0m" << std::endl;
 }

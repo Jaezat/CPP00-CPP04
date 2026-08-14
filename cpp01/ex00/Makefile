@@ -12,36 +12,35 @@
 
 NAME	=	zombie
 
-SRC_DIR	=	.
+SRC_DIR	=	srcs
 OBJ_DIR	=	obj
 
 SRC		=	$(wildcard $(SRC_DIR)/*.cpp)
 OBJ		=	$(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
 CXX		=	c++
-CXXFLAGS =	-Wall -Werror -Wextra -std=c++98 -IInclude
+CXXFLAGS =	-Wall -Werror -Wextra -std=c++98 -Iinclude
 RM		=	rm -rf
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "Linking executable."
+	@echo "Executing!"
 	@$(CXX) $(OBJ) -o $@
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
-	@echo "Compiling $@."
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
 clean:
-	@echo "Removing object files."
 	@$(RM) $(OBJ_DIR)
+	@echo "Cleaned!"
 
 fclean: clean
-	@echo "Removing executable."
 	@$(RM) $(NAME)
+	@echo "FCleaned!"
 
 re: fclean all
 
