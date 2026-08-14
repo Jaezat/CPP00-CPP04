@@ -6,7 +6,7 @@
 /*   By: mariacos <mariacos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 20:09:05 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/14 20:09:06 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/14 20:40:35 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 #include <string>
 #include <iostream>
+#include <climits>
 
 class Zombie {
     

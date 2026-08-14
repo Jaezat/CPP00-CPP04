@@ -6,11 +6,11 @@
 #    By: mariacos <mariacos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/13 17:05:03 by mariacos          #+#    #+#              #
-#    Updated: 2026/08/13 20:12:55 by mariacos         ###   ########.fr        #
+#    Updated: 2026/08/14 20:28:23 by mariacos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	zombie
+NAME	=	zombieHorde
 
 SRC_DIR	=	srcs
 OBJ_DIR	=	obj
