@@ -6,7 +6,7 @@
 /*   By: mariacos <mariacos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/15 19:21:50 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/16 17:15:19 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/16 18:52:41 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,26 @@ int main(int argc, char **argv)
     std::string     fileName = argv[1];
     std::string     s1 = argv[2];
     std::string     s2 = argv[3];
+    std::string     ext = ".replace";
     std::string     text;
     std::ifstream   inStream(argv[1]);
-    std::ofstream   outStream(fileName + ".replace");
+    std::ofstream   outStream((fileName + ".replace").c_str());
     char            c;
     
     while (inStream.get(c))
-        text += c;
-    std::cout << text;
-    
-    /* here analyze the text 
-    For that I have:
-    - string 1 and string 2
-    - i need to be able to find string 1 in text
-    - replace string 1 by string 2
-    - do that for all text
-    - add that text into new file*/
-    
-    
-    
+        text += c;    
+    size_t pos;
+    pos = 0;
+    while(true)
+    {
+        pos = text.find(s1, pos);
+        if(pos != std::string::npos)
+        {
+            text.erase(pos, s1.length());
+            text.insert(pos, s2);
+        }
+        else
+            break;
+    }
+    outStream << text;
 }
