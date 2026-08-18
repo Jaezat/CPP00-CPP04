@@ -6,7 +6,7 @@
 /*   By: mariacos <mariacos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/15 19:21:50 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/16 18:52:41 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/18 20:04:00 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,10 @@ int main(int argc, char **argv)
     while(true)
     {
         pos = text.find(s1, pos);
-        if(pos != std::string::npos)
-        {
-            text.erase(pos, s1.length());
-            text.insert(pos, s2);
-        }
-        else
+        if(!pos != std::string::npos)
             break;
-    }
+        text.erase(pos, s1.length());
+        text.insert(pos, s2);
+        pos += s2.length();
     outStream << text;
 }
