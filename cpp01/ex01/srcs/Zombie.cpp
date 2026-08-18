@@ -6,7 +6,7 @@
 /*   By: mariacos <mariacos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/13 20:20:18 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/14 21:03:25 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/17 14:36:22 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Zombie::Zombie() 
 {
-    std::cout << "\033[38;5;208mZombie created! Yay!\033[0m" << std::endl;
+     std::cout << "\033[38;5;208mZombie created! Yay!\033[0m" << std::endl;
 }
 
 Zombie::~Zombie(void) 

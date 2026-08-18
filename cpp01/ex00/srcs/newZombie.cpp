@@ -6,7 +6,7 @@
 /*   By: mariacos <mariacos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/13 20:59:07 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/13 21:06:14 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/17 14:35:08 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,3 @@ Zombie* newZombie(std::string name)
 
     return zb;
 }
-
-/*
-esta funcion es una funcion que retorna una puntero aun objeto zombie
-
-en esta funcion lo que tenemos que hacer es crear un zombie en el heap
-y que siga existiendo despues de que la funcion termine
-
-entonces que hago?
-1. Creo un zombie usando new
-2. new returns a pointer to that object. 
-3. Objeto tiene que vivir en el heap.
-4. 
-*/
-
-

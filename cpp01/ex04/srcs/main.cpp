@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 {
     if(argc != 4)
     {
-        std::cout << "Please insert the correct inputs:" << std::endl;
+        std::cout << "Please insert the correct input:" << std::endl;
         std::cout << "<filename> <sentence> <sentence>" << std::endl;
         return 1;
     }
@@ -28,9 +28,20 @@ int main(int argc, char **argv)
     std::string     ext = ".replace";
     std::string     text;
     std::ifstream   inStream(argv[1]);
+    if (!inStream.is_open())
+    {
+        std::cerr << "Error: Could not open or read file '" << fileName << "'." << std::endl;
+        return 1;
+    }
+
     std::ofstream   outStream((fileName + ".replace").c_str());
+    if (!outStream.is_open())
+    {
+        std::cerr << "Error: Could not open or read file '" << fileName << "'." << std::endl;
+        return 1;
+    }
+
     char            c;
-    
     while (inStream.get(c))
         text += c;    
     size_t pos;
