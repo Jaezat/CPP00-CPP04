@@ -6,7 +6,7 @@
 #    By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/08/18 19:10:53 by mariacos          #+#    #+#              #
-#    Updated: 2026/08/18 19:11:01 by mariacos         ###   ########.fr        #
+#    Updated: 2026/08/19 12:18:09 by mariacos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ RM		=	rm -rf
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "Executing!"
+	@echo "Executed!"
 	@$(CXX) $(OBJ) -o $@
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)

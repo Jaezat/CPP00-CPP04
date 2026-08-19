@@ -6,7 +6,7 @@
 /*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 19:10:22 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/19 12:13:01 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/19 12:23:51 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Fixed::Fixed()
 Fixed::Fixed(const Fixed& p) 
 { 
 	std::cout << "Copy constructor called" << std::endl;
-	this->_rawValue = p._rawValue;
+	*this = p;
 }
 			
 Fixed& Fixed::operator=(const Fixed& p) 
