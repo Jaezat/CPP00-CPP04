@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariacos <mariacos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 12:28:59 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/20 17:51:35 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/20 18:01:31 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ Fixed& Fixed::operator=(const Fixed& p)
 	return *this;
 }
 
-
 Fixed::Fixed(const int num)
 {
 	// needs to convert num to the corresponding fixed point value
@@ -47,6 +46,14 @@ Fixed::Fixed(const float num)
 
 // recordar que tengo que hacer esto tb:
 
-float toFloat(void) const 
-int toInt(void) const;
+float toFloat(void) const // here i need to convert fixed point to float?
+{
+	
+}
+
+int toInt(void) const
+{
+	
+	
+}
 
