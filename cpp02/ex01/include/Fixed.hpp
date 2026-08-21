@@ -6,7 +6,7 @@
 /*   By: mariacos <mariacos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 12:28:40 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/20 17:49:10 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/21 16:17:26 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,13 @@ class Fixed {
 		Fixed& operator=(const Fixed& p);
 		~Fixed();
 
+		int getRawBits(void) const;
+		void setRawBits (int const raw);
 		float toFloat(void) const; // this converts fixed point to float
-		int toInt(void) const; // this converts fixed point to int 
+		int toInt(void) const; // this converts fixed point to int
 };
+
+std::ostream& operator<<(std::ostream& out, const Fixed& f);
 
 
 #endif
