@@ -6,7 +6,7 @@
 /*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 18:00:23 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/23 18:16:46 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/24 06:41:29 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,90 +80,118 @@ std::ostream& operator<<(std::ostream& out, const Fixed& f)
 	return out;
 }
 
-/* ************************* */
-
-// Here i need to define 6 comparison operators:
-// 1. ==
 bool Fixed::operator==(const Fixed& p) const
 {
 	return _rawValue == p._rawValue;
 }
 
-// 2. !=
 bool Fixed::operator!=(const Fixed& p) const
 {
 	return _rawValue != p._rawValue;
 }
-
-// 3. >
 
 bool Fixed::operator>(const Fixed& p) const
 {
 	return _rawValue > p._rawValue;
 }
 
-// 4. <
-
 bool Fixed::operator<(const Fixed& p) const
 {
 	return _rawValue < p._rawValue;
 }
-
-// 5. >=
 
 bool Fixed::operator>=(const Fixed& p) const
 {
 	return _rawValue >= p._rawValue;
 }
 
-// 6. <=
-
 bool Fixed::operator<=(const Fixed& p) const
 {
 	return _rawValue <= p._rawValue;
 }
 
-// Here I need 4 arithmetic operators:
-// 1. +
-
 Fixed Fixed::operator+(const Fixed& p) const
 {
 	Fixed result;
-	result.setRawBits(this->getRawBits() + p.getRawBits);
+	result.setRawBits(this->getRawBits() + p.getRawBits());
 	return result;
 }
-
-// 2. -
 
 Fixed Fixed::operator-(const Fixed& p) const
 {
 	Fixed result;
-	result.setRawBits(this->getRawBits() - p.getRawBits);
+	result.setRawBits(this->getRawBits() - p.getRawBits());
 	return result;
 }
-
-//  3. *
 
 Fixed Fixed::operator*(const Fixed& p) const
 {
 	return Fixed(this->toFloat() * p.toFloat());
 }
 
-// 4. /
-
 Fixed Fixed::operator/(const Fixed& p) const
 {
 	return Fixed(this->toFloat() / p.toFloat());
 }
 
+Fixed& Fixed::operator++()
+{
+	this->_rawValue = this->_rawValue + 1;
+	return *this;
+}
 
+Fixed Fixed::operator++(int num)
+{
+	(void)num;
 
-// Here i need 4 increment/decrement
+	Fixed other(*this);
+	this->_rawValue = this->_rawValue + 1;
+	return other;
+}
 
-// 1. Pre-increment (++var)
+Fixed& Fixed::operator--()
+{
+	this->_rawValue = this->_rawValue - 1;
+	return *this;
+}
 
-Fixed Fixed::operator
+Fixed Fixed::operator--(int num)
+{
+	(void)num;
 
+	Fixed other(*this);
+	this->_rawValue = this->_rawValue - 1;
+	return other;
+}
 
-// ++val -> +1 -> val
-// val++ -> val -> + 1
+Fixed& Fixed::min(Fixed& a, Fixed& b)
+{
+	if (a < b)
+		return a;
+	else
+		return b;
+}
+
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
+{
+	if (a < b)
+		return a;
+	else
+		return b;
+}
+
+Fixed& Fixed::max(Fixed& a, Fixed& b)
+{
+	if (a > b)
+		return a;
+	else
+		return b;
+}
+
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
+{
+	if (a > b)
+		return a;
+	else
+		return b;
+}
