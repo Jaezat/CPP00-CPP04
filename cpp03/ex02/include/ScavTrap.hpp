@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/24 07:12:17 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/25 09:46:49 by mariacos         ###   ########.fr       */
+/*   Created: 2026/08/24 17:16:27 by mariacos          #+#    #+#             */
+/*   Updated: 2026/08/25 08:21:42 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-int main(int argc, char **argv)
+#include "ClapTrap.hpp"
+#include <iostream>
+#include <string>
+
+#define SCAV_HP 100
+#define SCAV_EP 50
+#define SCAV_AD 20
+
+class ScavTrap: public ClapTrap 
 {
-	if (argc != 3)
-	{
-		std::cout << "Please insert a name. " << std::endl << "Example: <program_name> <name_chosen> <another_name>" << std::endl;
-		return 1;
-	}	
-	std::string name = argv[1];
-	std::string secName = argv[2];
-	
-	ScavTrap st(name);
-	
-	st.attack(secName);
-	st.takeDamage(10);
-	st.beRepaired(5);
-	st.guardGate();
+	public:
+			ScavTrap();
+			ScavTrap(std::string name);
+			ScavTrap(const ScavTrap& other);
+			ScavTrap& operator=(const ScavTrap& other);
+			~ScavTrap();
+			
+			void guardGate();
+};
 
-	return 0;
-}
+#endif

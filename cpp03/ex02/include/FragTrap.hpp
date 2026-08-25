@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fragtrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/24 07:12:17 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/25 09:46:49 by mariacos         ###   ########.fr       */
+/*   Created: 2026/08/25 09:19:39 by mariacos          #+#    #+#             */
+/*   Updated: 2026/08/25 09:34:22 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-int main(int argc, char **argv)
+#include <iostream>
+#include <string>
+#include "ClapTrap.hpp"
+
+#define FRAG_HP 100
+#define FRAG_EP 100
+#define FRAG_AD 30
+
+class FragTrap : public ClapTrap
 {
-	if (argc != 3)
-	{
-		std::cout << "Please insert a name. " << std::endl << "Example: <program_name> <name_chosen> <another_name>" << std::endl;
-		return 1;
-	}	
-	std::string name = argv[1];
-	std::string secName = argv[2];
-	
-	ScavTrap st(name);
-	
-	st.attack(secName);
-	st.takeDamage(10);
-	st.beRepaired(5);
-	st.guardGate();
+	public:
+		FragTrap();
+		FragTrap(std::string name);
+		FragTrap(const FragTrap& other);
+		FragTrap& operator=(const FragTrap& other);
+		~FragTrap();
 
-	return 0;
-}
+		void highFiveGuys(void);
+};
+
+#endif

@@ -6,11 +6,11 @@
 /*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 07:12:17 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/25 09:46:49 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/25 09:47:06 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(int argc, char **argv)
 {
@@ -21,13 +21,12 @@ int main(int argc, char **argv)
 	}	
 	std::string name = argv[1];
 	std::string secName = argv[2];
+	FragTrap ft(name);
 	
-	ScavTrap st(name);
-	
-	st.attack(secName);
-	st.takeDamage(10);
-	st.beRepaired(5);
-	st.guardGate();
+	ft.attack(secName);
+	ft.takeDamage(20);
+	ft.beRepaired(10);
+	ft.highFiveGuys();
 
 	return 0;
 }
