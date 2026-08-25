@@ -6,7 +6,7 @@
 /*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 17:16:37 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/24 18:28:21 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/25 08:36:18 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,19 @@
 #define SCAV_EP 50
 #define SCAV_AD 20 */
 
-ScavTrap::ScavTrap() : ClapTrap("default", SCAV_HP, SCAV_EP, SCAV_AD)
+ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "ScavTrap default Constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name): ClapTrap(name, SCAV_HP, SCAV_EP, SCAV_AD)
+ScavTrap::ScavTrap(std::string name): ClapTrap(name, 100, 50, 20)
 {
 	std::cout << "ScavTrap parameterized constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& other)
-	: ClapTrap(other.name, other.hitPoints, other.energyPoints, other.attackDamage)
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = other;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& other)

@@ -6,7 +6,7 @@
 /*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 17:16:27 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/24 18:31:15 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/25 08:21:42 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ class ScavTrap: public ClapTrap
 			~ScavTrap();
 			
 			void guardGate();
-}
+};
 
 #endif

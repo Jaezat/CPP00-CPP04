@@ -6,7 +6,7 @@
 /*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 07:12:17 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/24 18:29:36 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/25 09:02:53 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 int main(int argc, char **argv)
 {
-	if (argc != 2)
+	if (argc != 3)
 	{
-		std::cout << "Please insert a name. " << std::endl << "Example: <program_name> <name_chosen>" << std::endl;
+		std::cout << "Please insert a name. " << std::endl << "Example: <program_name> <name_chosen> <another_name>" << std::endl;
 		return 1;
 	}	
 	std::string name = argv[1];
+	std::string secName = argv[2];
+	ScavTrap st(name);
 	
-	ScapTrap st;
-	
-	st.attack("Bola");
-	st.takeDamage(3);
+	st.attack(secName);
+	st.takeDamage(10);
 	st.beRepaired(5);
 
-	return 0;	
+	return 0;
 }
