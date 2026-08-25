@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mariacos <mariacos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 06:54:10 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/25 09:40:19 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/25 10:53:14 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap()
 	std::cout << "ClapTrap default Constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name): name(name), hitPoints(10), energyPoints(10), attackDamage(0)
+ClapTrap::ClapTrap(std::string name): name(name), hitPoints(CLAP_HP), energyPoints(CLAP_EP), attackDamage(CLAP_AD)
 {
 	std::cout << "ClapTrap parameterized constructor called" << std::endl;
 }
