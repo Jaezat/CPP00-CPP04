@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: mariacos <mariacos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 06:54:10 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/25 09:33:15 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/25 11:18:00 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,9 @@ void ClapTrap::takeDamage(unsigned int amount)
 		this->hitPoints = 0;
 	else
 		this->hitPoints -= amount;	
-	std::cout << "ClapTrap " << this->name << " takes " << amount << " points of damage! (Points left: " << this->hitPoints << ")" << std::endl;
+	std::cout << "ClapTrap " << this->name << " takes " << amount << " points of damage! Noooo D: (Points left: " << this->hitPoints << ")" << std::endl;
 }
+
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->hitPoints == 0)
