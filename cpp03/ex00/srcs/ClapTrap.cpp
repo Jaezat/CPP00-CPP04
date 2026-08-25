@@ -3,27 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariacos <mariacos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 06:54:10 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/24 11:16:45 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/25 09:40:19 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap()
 {
-	std::cout << "Constructor called" << std::endl;
-	this->name = name;
-	this->energyPoints = 10;
-	this->hitPoints = 10;
-	this->attackDamage = 0;
+	std::cout << "ClapTrap default Constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name): name(name), hitPoints(10), energyPoints(10), attackDamage(0)
+{
+	std::cout << "ClapTrap parameterized constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap& other)
+{
+	std::cout << "ClapTrap copy constructor called" << std::endl;
+	*this = other;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& other)
+{
+	std::cout << "ClapTrap copy assignment operator called" << std::endl;
+	if (this != &other)
+	{
+		this->name = other.name;
+		this->hitPoints = other.hitPoints;
+		this->energyPoints = other.energyPoints;
+		this->attackDamage = other.attackDamage;
+	}
+	return *this;
 }
 
 ClapTrap::~ClapTrap() 
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -44,7 +64,7 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	if (amount >= this->hitPoints)
+	if (amount >= static_cast<unsigned int>(this->hitPoints))
 		this->hitPoints = 0;
 	else
 		this->hitPoints -= amount;	
