@@ -12,7 +12,11 @@
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() { std::cout << "Wrong Animal default constructor called" << std::endl; }
+WrongAnimal::WrongAnimal()
+{ 
+	std::cout << "Wrong Animal default constructor called" << std::endl; 
+	this->type = "Wrong Animal";
+}
 
 WrongAnimal::WrongAnimal(const WrongAnimal& other)
 {

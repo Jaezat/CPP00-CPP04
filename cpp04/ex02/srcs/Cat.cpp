@@ -13,9 +13,10 @@
 #include "AAnimal.hpp"
 #include "Cat.hpp"
 
-Cat::Cat() 
+Cat::Cat()
 { 
 	std::cout << "Cat default constructor called" << std::endl;
+	this->type = "Cat";
 	this->catBrain = new Brain();
 }
 

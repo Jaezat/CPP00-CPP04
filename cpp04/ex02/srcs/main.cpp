@@ -16,16 +16,16 @@
 
 int main()
 {
-	Dog d;
+	/* Dog d;
 	d.makeSound();
 	
 	AAnimal *pet = new Dog;
 	pet->makeSound();
 	std::cout << pet->getType() << std::endl;
 
-	delete pet;
+	delete pet; */
 
-	/* Dog original;
+	Dog original;
 	
 	original.setIdea(0, "chase the mailman");
 	Dog copy(original);
@@ -38,7 +38,7 @@ int main()
 
 	std::cout << "***********************" << std::endl;
 	std::cout << "Original: " << original.getIdea(0) << std::endl;
-	std::cout << "Copy: " << copy.getIdea(0) << std::endl; */
+	std::cout << "Copy: " << copy.getIdea(0) << std::endl;
 	
 	return 0;
 }

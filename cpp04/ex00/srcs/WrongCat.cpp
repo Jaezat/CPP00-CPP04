@@ -12,7 +12,11 @@
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat() { std::cout << "WrongCat default constructor called" << std::endl; }
+WrongCat::WrongCat()
+{ 
+	std::cout << "WrongCat default constructor called" << std::endl; 
+	this->type = "Wrong Cat";
+}
 
 WrongCat::WrongCat(const WrongCat& other)
 {
@@ -29,3 +33,5 @@ WrongCat& WrongCat::operator=(const WrongCat& other)
 }
 
 WrongCat::~WrongCat() { std::cout << "WrongCat destructor called" << std::endl; }
+
+void WrongCat::makeSound() const { std::cout << "I'm not the cat you're looking for! I'm the wrong cat!" << std::endl; }

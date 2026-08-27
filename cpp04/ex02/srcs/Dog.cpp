@@ -14,9 +14,10 @@
 #include "Dog.hpp"
 #include "Brain.hpp"
 
-Dog::Dog() 
+Dog::Dog() : type("Dog")
 { 
 	std::cout << "Dog default constructor called" << std::endl; 
+	this->type = "Dog";
 	this->dogBrain = new Brain();
 }
 
