@@ -24,6 +24,21 @@ int main()
 	std::cout << pet->getType() << std::endl;
 
 	delete pet;
+
+	/* Dog original;
+	
+	original.setIdea(0, "chase the mailman");
+	Dog copy(original);
+	
+	original.setIdea(0, "slept all day");
+	if (original.getIdea(0) != copy.getIdea(0))
+		std::cout << "Success: Deep copy done." << std::endl;
+	else
+		std::cout << "Failure: Shallow copy detected." << std::endl;
+
+	std::cout << "***********************" << std::endl;
+	std::cout << "Original: " << original.getIdea(0) << std::endl;
+	std::cout << "Copy: " << copy.getIdea(0) << std::endl; */
 	
 	return 0;
 }

@@ -16,24 +16,23 @@
 
 int main()
 {
-	/* int n = 6;
+	int n = 6;
 	const Animal *pets[n];
 	
 	for(int i = 0; i < n / 2; i++)
 		pets[i] = new Cat();
 	for(int i = n / 2; i < n; i++)
 		pets[i] = new Dog();
+
+
+	for (int i = 0; i < n; i++)
+	{
+		std::cout << "Animal: " << pets[i]->getType() << std::endl;
+		pets[i]->makeSound();
+	}
+
 	for(int i = 0; i < n; i++)
-		delete pets[i]; */
+		delete pets[i];
 
-	Dog original;
-	original.setIdea(0, "chase the mailman");
-
-	Dog copy(original);              
-	copy.setIdea(0, "sleep all day"); 
-
-	std::cout << "Original: " << original.getIdea(0) << std::endl;
-	std::cout << "Copy: " << copy.getIdea(0) << std::endl;
-	
 	return 0;
 }
