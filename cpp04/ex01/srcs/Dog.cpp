@@ -6,7 +6,7 @@
 /*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/26 11:44:34 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/26 22:26:00 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/27 11:17:31 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,12 @@ void Dog::makeSound() const { std::cout << "Woof woof! I'm a dog! " << std::endl
 void Dog::setIdea(int index, std::string idea)
 {
 	if(this->dogBrain)
-		this->dogBrain(index, idea);
+		this->dogBrain->ideas[index] = idea;
+}
+
+std::string Dog::getIdea(int index) const
+{
+	if (this->dogBrain)
+		return this->dogBrain->ideas[index];
+	return "";
 }
