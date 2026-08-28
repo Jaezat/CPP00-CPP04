@@ -50,6 +50,8 @@ void Dog::makeSound() const { std::cout << "Woof woof! I'm a dog! " << std::endl
 
 void Dog::setIdea(int index, std::string idea)
 {
+	if (index < 0 || index > 100)
+		return ;
 	if(this->dogBrain)
 		this->dogBrain->ideas[index] = idea;
 }
