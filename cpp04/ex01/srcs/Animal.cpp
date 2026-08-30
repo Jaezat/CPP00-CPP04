@@ -44,7 +44,7 @@ Animal::~Animal() {
 
 void Animal::makeSound() const
 {
-	std::cout << "I don't which animal I am but I promess I am one!" << std::endl;
+	std::cout << "I don't know which animal I am but I promess I am one!" << std::endl;
 }
 
 std::string Animal::getType() const
