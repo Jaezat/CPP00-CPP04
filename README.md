@@ -6,11 +6,11 @@ This repository contains my solutions for the C++ Piscine modules at 42, coverin
 
 | Module | Topic |
 |--------|-------|
-| [CPP00](./CPP00) | Namespaces, Classes, Member Functions, Stdio Streams, Initialization Lists, Static, Const |
-| [CPP01](./CPP01) | Memory Allocation, Pointers to Members, References, Switch Statement |
-| [CPP02](./CPP02) | Ad hoc Polymorphism, Operator Overloading, Orthodox Canonical Form |
-| [CPP03](./CPP03) | Inheritance |
-| [CPP04](./CPP04) | Subtype Polymorphism, Abstract Classes |
+| [CPP00](./cpp00) | Namespaces, Classes, Member Functions, Stdio Streams, Initialization Lists, Static, Const |
+| [CPP01](./cpp01) | Memory Allocation, Pointers to Members, References, Switch Statement |
+| [CPP02](./cpp02) | Ad hoc Polymorphism, Operator Overloading, Orthodox Canonical Form |
+| [CPP03](./cpp03) | Inheritance |
+| [CPP04](./cpp04) | Subtype Polymorphism, Abstract Classes |
 
 ---
 
@@ -56,6 +56,6 @@ Explores polymorphism, abstract classes, interfaces, and deep vs. shallow copy.
 Each exercise includes its own `Makefile`. To compile:
 
 ```bash
-cd CPPXX/exYY
+cd cppXX/exYY
 make
 ```
