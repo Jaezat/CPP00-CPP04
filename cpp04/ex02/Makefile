@@ -15,8 +15,15 @@ NAME	=	Abstract
 SRC_DIR	=	srcs
 OBJ_DIR	=	obj
 
-SRC		=	$(wildcard $(SRC_DIR)/*.cpp)
-OBJ		=	$(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
+FILES 	= 	AAnimal.cpp \
+			Animal.cpp	\
+			Brain.cpp	\
+			Cat.cpp		\
+			Dog.cpp		\
+			main.cpp	
+
+SRC		=	$(addprefix $(SRC_DIR)/,$(FILES))
+OBJ		=	$(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRC))
 
 CXX		=	c++
 CXXFLAGS =	-Wall -Werror -Wextra -std=c++98 -Iinclude

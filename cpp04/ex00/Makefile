@@ -15,8 +15,15 @@ NAME	=	Animals
 SRC_DIR	=	srcs
 OBJ_DIR	=	obj
 
-SRC		=	$(wildcard $(SRC_DIR)/*.cpp)
-OBJ		=	$(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
+FILES 	= 	Animal.cpp		\
+			Cat.cpp			\
+			Dog.cpp			\
+			main.cpp		\
+			WrongAnimal.cpp	\
+			WrongCat.cpp
+
+SRC		=	$(addprefix $(SRC_DIR)/,$(FILES))
+OBJ		=	$(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRC))
 
 CXX		=	c++
 CXXFLAGS =	-Wall -Werror -Wextra -std=c++98 -Iinclude
