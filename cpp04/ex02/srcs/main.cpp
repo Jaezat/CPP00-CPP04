@@ -10,21 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include "../include/AAnimal.hpp"
+#include "../include/Dog.hpp"
+#include "../include/Cat.hpp"
 
 int main()
 {
-	/* Dog d;
-	d.makeSound();
-	
-	AAnimal *pet = new Dog;
-	pet->makeSound();
-	std::cout << pet->getType() << std::endl;
-
-	delete pet; */
-
 	Dog original;
 	
 	original.setIdea(0, "chase the mailman");

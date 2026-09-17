@@ -32,4 +32,18 @@ Brain& Brain::operator=(const Brain& other)
     return *this;
 }
 
-Brain::~Brain() { std::cout << "Brain destructor called" << std::endl; }
+Brain::~Brain() 
+{ 
+    std::cout << "Brain destructor called" << std::endl; 
+}
+
+void Brain::setIdea(int index, std::string idea)
+{
+    this->ideas[index] = idea;
+}
+
+std::string Brain::getIdea(int index) const
+{
+    return this->ideas[index];
+}
+

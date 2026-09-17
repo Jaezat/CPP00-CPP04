@@ -6,22 +6,20 @@
 /*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/26 11:44:34 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/27 12:53:59 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/27 11:17:31 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Dog.hpp"
-#include "Brain.hpp"
+#include "../include/Dog.hpp"
 
 Dog::Dog()
 { 
-	std::cout << "Dog default constructor called" << std::endl; 
+	std::cout << "Dog default constructor called" << std::endl;
 	this->type = "Dog";
 	this->dogBrain = new Brain();
 }
 
-Dog::Dog(const Dog& other)
+Dog::Dog(const Dog& other) 
 {
 	std::cout << "Dog copy constructor called" << std::endl;
 	this->dogBrain = new Brain(*other.dogBrain);
@@ -46,17 +44,20 @@ Dog::~Dog()
 	delete this->dogBrain;	
 }
 
-void Dog::makeSound() const { std::cout << "Woof woof! I'm a dog! " << std::endl; }
+void Dog::makeSound() const 
+{ 
+	std::cout << "Woof woof! I'm a dog! " << std::endl; 
+}
 
 void Dog::setIdea(int index, std::string idea)
 {
-	if(this->dogBrain)
-		this->dogBrain->ideas[index] = idea;
+	if (index < 0 || index >= 100)
+		return ;
+	else if(this->dogBrain)
+		this->dogBrain->setIdea(index, idea);
 }
 
 std::string Dog::getIdea(int index) const
 {
-	if (this->dogBrain)
-		return this->dogBrain->ideas[index];
-	return "";
+	return this->dogBrain->getIdea(index);
 }

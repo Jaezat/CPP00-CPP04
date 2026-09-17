@@ -6,15 +6,14 @@
 /*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/26 18:17:48 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/27 12:53:54 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/26 20:47:46 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Cat.hpp"
+#include "../include/Cat.hpp"
 
 Cat::Cat() 
-{ 
+{
 	std::cout << "Cat default constructor called" << std::endl;
 	this->type = "Cat";
 	this->catBrain = new Brain();
@@ -44,19 +43,20 @@ Cat::~Cat()
 	delete this->catBrain;
 }
 
-void Cat::makeSound() const { std::cout << "Meooooow I'm a cat I swear!" << std::endl; }
+void Cat::makeSound() const 
+{ 
+	std::cout << "Meooooow I'm a cat I swear!" << std::endl; 
+}
 
 void Cat::setIdea(int index, std::string idea)
 {
 	if (index < 0 || index > 100)
 		return ;
 	else if(this->catBrain)
-		this->catBrain->ideas[index] = idea;
+		this->catBrain->setIdea(index, idea);
 }
 
 std::string Cat::getIdea(int index) const
 {
-	if (this->catBrain)
-		return this->catBrain->ideas[index];
-	return "";
+	return this->catBrain->getIdea(index);
 }

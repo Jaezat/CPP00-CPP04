@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
+#include "../include/Cat.hpp"
 
 Cat::Cat() 
 {
@@ -44,19 +43,20 @@ Cat::~Cat()
 	delete this->catBrain;
 }
 
-void Cat::makeSound() const { std::cout << "Meooooow I'm a cat I swear!" << std::endl; }
+void Cat::makeSound() const 
+{ 
+	std::cout << "Meooooow I'm a cat I swear!" << std::endl; 
+}
 
 void Cat::setIdea(int index, std::string idea)
 {
 	if (index < 0 || index > 100)
 		return ;
 	else if(this->catBrain)
-		this->catBrain->ideas[index] = idea;
+		this->catBrain->setIdea(index, idea);
 }
 
 std::string Cat::getIdea(int index) const
 {
-	if (this->catBrain)
-		return this->catBrain->ideas[index];
-	return "";
+	return this->catBrain->getIdea(index);
 }

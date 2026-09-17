@@ -6,17 +6,17 @@
 /*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/26 11:40:31 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/27 12:57:14 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/26 22:23:19 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 #define DOG_HPP
 
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Brain.hpp"
 
-class Dog : public AAnimal
+class Dog : public Animal
 {
 	private:
 		Brain *dogBrain;

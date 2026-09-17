@@ -18,8 +18,9 @@ Animal::Animal()
 	this->type = "Animal";
 }
 
-Animal::Animal(std::string type) : type(type)
+Animal::Animal(std::string type)
 {
+	this->type = type;
 	std::cout << "Animal parameterized constructor called" << std::endl;
 }
 

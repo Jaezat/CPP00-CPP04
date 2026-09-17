@@ -6,17 +6,17 @@
 /*   By: mariacos <mariacos@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/26 18:15:19 by mariacos          #+#    #+#             */
-/*   Updated: 2026/08/27 12:54:14 by mariacos         ###   ########.fr       */
+/*   Updated: 2026/08/26 22:23:28 by mariacos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 #define CAT_HPP
 
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat : public AAnimal
+class Cat : public Animal
 {
 	private:
 		Brain *catBrain;

@@ -16,7 +16,7 @@
 
 int main()
 {
-	/* int n = 6;
+	int n = 6;
 	const Animal *pets[n];
 	
 	for(int i = 0; i < n / 2; i++)
@@ -32,7 +32,7 @@ int main()
 	}
 
 	for(int i = 0; i < n; i++)
-		delete pets[i]; */
+		delete pets[i];
 
 	Dog original;
 	

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include "Dog.hpp"
+#include "../include/Dog.hpp"
 
 Dog::Dog()
 { 
@@ -34,7 +34,12 @@ Dog& Dog::operator=(const Dog& other)
 	return *this;
 }
 
-Dog::~Dog() { std::cout << "Dog destructor called" << std::endl; }
+Dog::~Dog()
+{
+	std::cout << "Dog destructor called" << std::endl;
+}
 
-void Dog::makeSound() const { std::cout << "Woof woof! I'm a dog! " << std::endl; }
-
+void Dog::makeSound() const 
+{ 
+	std::cout << "Woof woof! I'm a dog! " << std::endl; 
+}

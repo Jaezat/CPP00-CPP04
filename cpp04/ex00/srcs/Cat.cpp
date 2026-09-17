@@ -39,5 +39,8 @@ Cat::~Cat()
 	std::cout << "Cat destructor called" << std::endl;
 }
 
-void Cat::makeSound() const { std::cout << "Meooooow I'm a cat I swear!" << std::endl; }
+void Cat::makeSound() const 
+{ 
+	std::cout << "Meooooow I'm a cat I swear!" << std::endl; 
+}
 

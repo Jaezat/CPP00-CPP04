@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Brain.hpp"
+#include "../include/Dog.hpp"
 
 Dog::Dog()
 { 
@@ -21,7 +19,7 @@ Dog::Dog()
 	this->dogBrain = new Brain();
 }
 
-Dog::Dog(const Dog& other)
+Dog::Dog(const Dog& other) 
 {
 	std::cout << "Dog copy constructor called" << std::endl;
 	this->dogBrain = new Brain(*other.dogBrain);
@@ -46,19 +44,20 @@ Dog::~Dog()
 	delete this->dogBrain;	
 }
 
-void Dog::makeSound() const { std::cout << "Woof woof! I'm a dog! " << std::endl; }
+void Dog::makeSound() const 
+{ 
+	std::cout << "Woof woof! I'm a dog! " << std::endl; 
+}
 
 void Dog::setIdea(int index, std::string idea)
 {
-	if (index < 0 || index > 100)
+	if (index < 0 || index >= 100)
 		return ;
-	if(this->dogBrain)
-		this->dogBrain->ideas[index] = idea;
+	else if(this->dogBrain)
+		this->dogBrain->setIdea(index, idea);
 }
 
 std::string Dog::getIdea(int index) const
 {
-	if (this->dogBrain)
-		return this->dogBrain->ideas[index];
-	return "";
+	return this->dogBrain->getIdea(index);
 }
